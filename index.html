@@ -8,23 +8,29 @@
 <body>
 <nav>
   <h1>Check <span class="title-span">Yo'</span>Self</h1>
-  <img src="search">
-  <input type="text" name="search-input" placeholder="Search">
+  <form>
+    <img src="search">
+    <input type="text" name="search-input" placeholder="Search">
+  </form>
 </nav>
 <main>
   <section class="left-side" alt="site-navigation">
-    <label for="task-title" class="task-title-label">Task Title</label>
-    <input type="text" name="task-title-input" id="task-title" placeholder="Type A New Task Title">
-    <div class="generated-list-left">
-      
-    </div>
-    <label for="task-item" class="task-item-label">Task Item</label>
-    <input type="text" name="task-item-input" id="task-item" placeholder="Type A New Task">
-    <span class="add-task-btn">+</span>
-    <button class="make-task-card-btn">Make Task List</button>
-    <button class="clear-all-btn">Clear All</button>
-    <hr>
-    <button class="filter-urgency-btn">Filter By Urgency</button> 
+    <form>
+      <label for="task-title" class="task-title-label">Task Title</label>
+      <input type="text" name="task-title-input" id="task-title" placeholder="Type A New Task Title">
+      <div class="generated-list-left">
+        
+      </div>
+      <label for="task-item" class="task-item-label">Task Item</label>
+      <form class="add-task-bar">
+        <input type="text" name="task-item-input" id="task-item" placeholder="Type A New Task">
+        <button class="add-task-btn">+</button>
+      </form>
+      <button class="make-task-card-btn">Make Task List</button>
+      <button class="clear-all-btn">Clear All</button>
+      <hr>
+      <button class="filter-urgency-btn">Filter By Urgency</button>
+    </form> 
   </section>
   <section class="right-side tasks-lists">
     <article class="task-list-card">

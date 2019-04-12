@@ -15,6 +15,11 @@ h1 {
   color:  #FEC40E;
 }
 
+nav{
+  display: flex;
+  justify-content: space-between;
+}
+
 main {
   display: grid;
   grid-template-columns: 30% 60%;
@@ -44,4 +49,8 @@ button {
   background-color: #1F1F3D;
   color:  #FFF;
   padding: 0;
+}
+
+#add-task-bar {
+  display: flex;
 }
