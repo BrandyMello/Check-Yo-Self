@@ -1,0 +1,47 @@
+body {
+  font-family: 'Open-Sans', sans-serif;
+}
+
+nav {
+  background-color: #1F1F3D;
+  text-transform: uppercase;
+}
+
+h1 {
+  color:  #FFF;
+}
+
+.title-span {
+  color:  #FEC40E;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 30% 60%;
+}
+
+.left-side {
+  background-color: #587A8B;
+  height: 100%;
+}
+
+.right-side {
+  background-color: #F4F7F8;
+}
+
+button {
+  background-color: #1F1F3D;
+  color:  #FFF;
+  width: 90%;
+}
+
+#task-item,
+#task-title {
+  display: block;
+}
+
+.add-task-btn {
+  background-color: #1F1F3D;
+  color:  #FFF;
+  padding: 0;
+}
