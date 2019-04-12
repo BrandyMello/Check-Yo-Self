@@ -9,7 +9,7 @@
   <img src="search">
   <input type="text" name="search-input" placeholder="Search">
 </nav>
-<section class="left navigation">
+<section class="left-side" alt="site-navigation">
   <label for="task-title" class="task-title-label">Task Title</label>
   <input type="text" name="task-title-input" id="task-title">
   <label for="task-item" class="task-item-label">Task Item</label>
@@ -19,8 +19,22 @@
   <hr>
   <button class="filter-urgency-btn"></button> 
 </section>
-<section class="right tasks">
-  
+<section class="right-side tasks-lists">
+  <article class="task-list-card">
+    <header>
+     <h2>Task Title</h2> 
+    </header>
+    <main class="round-checkbox">
+      <ul class="task-list">
+      </ul>
+    </main>
+    <footer>
+      <img src="" alt="mark-urgent" class="mark-urgent">
+      <label class="mark-urgent-label">Urgent</label>
+      <img src="" alt="delete-list" class="delete-list">
+      <label class="delete-list-btn-label">Delete</label>
+    </footer>    
+  </article> 
 </section>
 </body>
 </html>
