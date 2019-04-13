@@ -43,6 +43,8 @@ h1 {
   margin: 10px 15px 10px 0px;
   width: 450px;
   border: none;
+  font-size: 18px;
+  padding-left: 10px
 }
 
 main {
@@ -140,9 +142,64 @@ button:hover {
   border-top: 2px solid #3C6577;
   height: 400px;
 }
+.task-list-cards {
+  margin: 40px 20px 40px 20px;
+}
 
 .card-title,
 .card-list,
 .card-navigation {
-  border: 1px solid black;
+  border: 2px solid #c7d3d8;
+  width: 375px;
+  margin: 0px 20px;
+}
+
+.card-list,
+.card-navigation {
+  border-top: none;
+}
+
+.card-list {
+  height: 200px;
+}
+
+.card-title {
+  margin-top: 20px;
+}
+
+.card-navigation {
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  flex-wrap: wrap;
+}
+
+h2 {
+  color: #1F1F3D;
+  margin: 10px;
+}
+
+.delete-list-btn,
+.delete-list-btn-label {
+  align-self: center;
+}
+
+.mark-urgent-btn,
+.mark-urgent-label {
+  align-self: center;
+  margin-right: 130px;
+}
+
+.delete-list-btn,
+.mark-urgent-btn {
+  height: 25px;
+  width: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.delete-list-btn-label,
+.mark-urgent-label {
+  color: #3C6577;
+  text-transform: uppercase;
 }
