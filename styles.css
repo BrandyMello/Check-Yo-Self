@@ -30,9 +30,11 @@ h1 {
 
 .search-img {
   height: 49px;
-  background-color: #F3F6F7;
+  width: 49px;
+  background-color: #c7d3d8;
   border-radius: 5% 0% 0% 5%;
   margin: 10px 0px;
+  padding: 8px;
 }
 
 .search-input {
@@ -51,6 +53,9 @@ main {
 .left-side {
   background-color: #587A8B;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-right: 3px solid #3C6577;
 }
 
 .right-side {
@@ -60,26 +65,74 @@ main {
 button {
   background-color: #1F1F3D;
   color:  #FFF;
-  width: 90%;
+  height: 50px;
+  width: 95%;
+  margin: 10px;
+  border: none;
+  border-radius: 3px;
+}
+
+.make-task-card-btn {
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.clear-all-btn {
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.filter-urgency-btn {
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 1.5em;
 }
 
 .task-title-label,
 .task-item-label {
-  color: #FFF;
+  color: #c7d3d8;
+  margin-left: 15px;
+  margin-top: 35px;
+  margin-bottom: 5px;
+}
+
+.task-title,
+.task-item {
+  display: block;
+  border: 2px solid #1F1F3D;
+  height: 50px;
+  margin-left: 10px;
+  font-size: 1.5em;
+  padding: 8px;
 }
 
 .task-title {
-  display: block;
+  width: 95%;
+  border-radius: 3px;
 }
 
-.add-task-btn {
-  background-color: #1F1F3D;
-  width: 50px;
-  color:  #FFF;
-  padding: 0;
+.task-item {
+  width: 84%; 
+  border-radius: 3px 0px 0px 3px
 }
 
 .add-task-bar {
   display: flex;
   flex-direction: row;
+}
+
+.plus-image {
+  background-color: #1F1F3D;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  margin-right: 5px;
+  border-radius: 0px 3px 3px 0px 
+}
+
+.filter-urgency {
+  border-top: 2px solid #3C6577;
+  height: 400px;
 }
