@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Check Yo'Self</title>
+  <title>Check Yo' Self</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
 </head>
 <body>
-<nav>
-  <h1>Check <span class="title-span">Yo'</span>Self</h1>
-  <form>
-    <img src="search">
-    <input type="text" name="search-input" placeholder="Search">
+<header class="main-header">
+  <h1>Check <span class="title-span">Yo' </span>Self</h1>
+  <form class="search-bar">
+    <img src="images/search.svg" class="search-img">
+    <input type="text" name="search-input" placeholder="Search" class="search-input">
   </form>
-</nav>
+</header>
 <main>
   <section class="left-side" alt="site-navigation">
     <form>
       <label for="task-title" class="task-title-label">Task Title</label>
-      <input type="text" name="task-title-input" id="task-title" placeholder="Type A New Task Title">
+      <input type="text" name="task-title-input" id="task-title" class="task-title" placeholder="Type A New Task Title">
       <div class="generated-list-left">
         
       </div>
       <label for="task-item" class="task-item-label">Task Item</label>
       <form class="add-task-bar">
-        <input type="text" name="task-item-input" id="task-item" placeholder="Type A New Task">
+        <input type="text" name="task-item-input" id="task-item" class="task-item" placeholder="Type A New Task">
         <button class="add-task-btn">+</button>
       </form>
-      <button class="make-task-card-btn">Make Task List</button>
-      <button class="clear-all-btn">Clear All</button>
+      <button class="make-task-card-btn left-section-btns">Make Task List</button>
+      <button class="clear-all-btn left-section-btns">Clear All</button>
       <hr>
-      <button class="filter-urgency-btn">Filter By Urgency</button>
+      <button class="filter-urgency-btn left-section-btns">Filter By Urgency</button>
     </form> 
   </section>
   <section class="right-side tasks-lists">
