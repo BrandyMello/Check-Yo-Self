@@ -145,4 +145,14 @@ button:hover {
 .card-list,
 .card-navigation {
   border: 1px solid black;
+  width: 200px;
+  margin: 0px 20px;
+}
+
+.card-list {
+  height: 200px;
+}
+
+.card-title {
+  margin-top: 20px;
 }
