@@ -63,9 +63,13 @@ button {
   width: 90%;
 }
 
-.task-item,
+.task-title-label,
+.task-item-label {
+  color: #FFF;
+}
+
 .task-title {
- /* display: block;*/
+  display: block;
 }
 
 .add-task-btn {
