@@ -129,7 +129,7 @@ button:hover {
   flex-direction: row;
 }
 
-.plus-image {
+.add-task-image {
   background-color: #1F1F3D;
   height: 50px;
   width: 50px;
@@ -202,4 +202,17 @@ h2 {
 .mark-urgent-label {
   color: #3C6577;
   text-transform: uppercase;
+}
+
+.delete-btn {
+  width: 20px;
+  height: 20px;
+  margin: 0px 5px;
+}
+
+.inserted-list-item {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin-top: 20px; 
 }

@@ -18,13 +18,13 @@
     <label for="task-title" class="task-title-label">Task Title</label>
     <input type="text" name="task-title-input" id="task-title" class="task-title" placeholder="A New Task Title">
     <div class="generated-list-left">
-      <ul>
+      <ul class="list-items">
       </ul>
     </div>
     <label for="task-item" class="task-item-label">Task Item</label>
       <form class="add-task-bar">
         <input type="text" name="task-item-input" id="task-item" class="task-item" placeholder="Type A New Task">
-        <img src="images/plus.svg" class="plus-image">
+        <img src="images/plus.svg" class="add-task-image">
       </form>
       <button class="make-task-card-btn left-section-btns">Make Task List</button>
       <button class="clear-all-btn left-section-btns">Clear All</button>
@@ -32,7 +32,7 @@
       <button class="filter-urgency-btn left-section-btns">Filter By Urgency</button>
       </div>
   </section>
-  <section class="right-side tasks-lists">
+  <wrapper class="right-side tasks-lists">
     <article class="task-list-cards">
       <div class="card-title">
         <h2>Task Title</h2>
@@ -48,7 +48,7 @@
         <label class="delete-list-btn-label">Delete</label>
       </div>    
     </article> 
-  </section>
+  </wrapper>
   <script type="text/javascript" src="todo-list.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </body>
