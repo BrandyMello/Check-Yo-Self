@@ -18,8 +18,13 @@ function addToList(e) {
       <img src="images/delete.svg" class="delete-btn">
       <p>${taskItem.value}</p>
     </li>`
+    clearTaskInput()
   }
 
+function clearTaskInput() {
+  var taskForm = document.querySelector('.add-task-bar')
+  taskForm.reset();
+}
 
 
 
