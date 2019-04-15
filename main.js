@@ -1,32 +1,40 @@
 const addTask = document.querySelector('.add-task-image');
 const tasks = document.querySelector('.list-items');
-const lists = [];
-const listItems = document.querySelector('.generated-list-left')
-var taskItem = document.querySelector('#task-item')
+const listItems = document.querySelector('.generated-list-left');
+var taskItem = document.querySelector('.task-item');
 var makeListBtn = document.querySelector('.make-task-card-btn')
 var taskTitle = document.querySelector('.task-title')
+var cardList = [];
+const lists = [];
 
 addTask.addEventListener('click', addToList)
 
 
 function addToList(e) {
   e.preventDefault();
-  if(taskItem.value === "") {
-    return;
-  }
+  // if(taskItem.value === "") {
+  //   return;
+  // }
   tasks.innerHTML += `
     <li class="inserted-list-item" id="inserted-list-item">
       <img src="images/delete.svg" class="delete-btn">
       <p>${taskItem.value}</p>
     </li>`
+    cardList.push(taskItem.value)
+    console.log(taskItem.value)
     clearTaskInput();
-    // compileTasks();
   }
 
 function clearTaskInput() {
   var taskForm = document.querySelector('.add-task-bar');
   taskForm.reset();
+}
 
+function clearTaskBar() {
+cardList = [];
+var listElem = document.querySelector('.inserted-list-item')
+listElem.remove();
+taskTitle.value = "";
 }
 
 tasks.addEventListener('click', function (e) {
@@ -38,18 +46,20 @@ tasks.addEventListener('click', function (e) {
 //----------------Post Car----------------------------//
 
 makeListBtn.addEventListener('click', function(e) {
-  if(taskTitle.value === "") {
-    return alert('Please, add a title and a task!');
+  if (taskTitle.value === "" || cardList === []) {
+    return alert('Please, add a title!');
   }
   var taskBoard = document.querySelector('.right-side')
-  taskBoard.insertAdjacentHTML('afterbegin',`
+  taskBoard.innerHTML += (`
     <article class="task-list-cards">
       <div class="card-title">
         <h2>${taskTitle.value}</h2>
       </div>
       <div class="card-list">
         <ul class="generated-task-list">
-        ${taskItem.value}
+        ${cardList.map(toDo => `
+          <input type="checkbox" class="checkbox">${toDo}`
+          ).join('')}
         </ul>
       </div>
       <div class="card-navigation">
@@ -60,6 +70,8 @@ makeListBtn.addEventListener('click', function(e) {
       </div>    
     </article> `
 );
+clearTaskBar()
+
 })
 
 // function compileTasks( ){
@@ -82,10 +94,12 @@ function compileTasks() {
   var id = Date.now();
   var unsavedList = [];
   var childrenOfList = tasks.children;
-  for (var i = 0; i < childrenOfList.length; i++) {
-    var taskText = childrenOfList[i].childNodes[3].innerText;
-    unsavedList.push(taskText);
-  }
+  // for (var i = 0; i < childrenOfList.length; i++) {
+    // var taskText = childrenOfList[i].childNodes[3].innerText;
+    // unsavedList.push(taskText);
+    // cardList.push(taskText);
+    // console.log(cardList)
+  // }
   // console.log(unsavedList);
   const title = (document.querySelector('.task-title').value);
   const postIt = {

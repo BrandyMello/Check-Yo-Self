@@ -220,7 +220,17 @@ h2 {
   margin-top: 10px; 
 }
 
-@media screen and (max-width: 320px) {
+/*@media screen and (max-width: 820px) {
+
+h1 {
+  font-size: 24px;
+  padding: 0;
+  margin-right: 5px;
+}
+
+}*/
+
+@media screen and (max-width: 400px) {
   .main-header {
   display: block;
   height: 140px;

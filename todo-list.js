@@ -1,4 +1,4 @@
-class ToDoList {
+class ToDo {
   constructor(title, tasks) {
     this.id = Date.now();
     this.title = title;
@@ -22,12 +22,4 @@ class ToDoList {
 
   }
 
-}
-
-class Tasks {
-  constructor(info) {
-    this.info = info;
-    this.done = false;
-    this.id = Date.now();
-  }
 }
