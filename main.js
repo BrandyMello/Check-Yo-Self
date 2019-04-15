@@ -35,7 +35,12 @@ tasks.addEventListener('click', function (e) {
   }
 });
 
+//----------------Post Car----------------------------//
+
 makeListBtn.addEventListener('click', function(e) {
+  if(taskTitle.value === "") {
+    return alert('Please, add a title and a task!');
+  }
   var taskBoard = document.querySelector('.right-side')
   taskBoard.insertAdjacentHTML('afterbegin',`
     <article class="task-list-cards">
@@ -57,14 +62,36 @@ makeListBtn.addEventListener('click', function(e) {
 );
 })
 
+// function compileTasks( ){
+//   var id = Date.now();
+//   var unsavedList = [];
+//   var childrenOfList = tasks.children;
+//   for (var i = 0; i < childrenOfList.length; i++) {
+//     var taskText = childrenOfList[i].childNodes[3].innerText;
+//     unsavedList.push(taskText);
+//     document.querySelector('.generated-task-list').insertAdjacentHTML('afterbegin',`
+//         <li>
+//         <label>${unsavedList}</label>
+//         </li>
+//       `;
+//   }.join('');
+// }
+
 function compileTasks() {
   // var newToDo = new ToDoList(taskTitle.value, ) 
   var id = Date.now();
+  var unsavedList = [];
+  var childrenOfList = tasks.children;
+  for (var i = 0; i < childrenOfList.length; i++) {
+    var taskText = childrenOfList[i].childNodes[3].innerText;
+    unsavedList.push(taskText);
+  }
+  // console.log(unsavedList);
   const title = (document.querySelector('.task-title').value);
   const postIt = {
     id,
     title: taskTitle.value,
-    list: 'listOfTasks',
+    list: unsavedList,
     done: false
   };
   lists.push(postIt);
@@ -72,7 +99,7 @@ function compileTasks() {
   console.log(postIt);
 }
 
-// function populatePost(postIts, taskLists) {
+// function populatePost(postIts, taskBoard) {
 //   taskList.innerHTML = postIts.map((postIt, i) => {
 //     return `
 //     <li>
@@ -80,7 +107,6 @@ function compileTasks() {
 //     </li>
 //     `;
 //   }).join('');
-
 // }
 
 makeListBtn.addEventListener('click',compileTasks)
