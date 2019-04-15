@@ -50,6 +50,7 @@ h1 {
 main {
   display: grid;
   grid-template-columns: 30% 70%;
+  background-color: #F4F7F8;
 }
 
 .left-side {
@@ -143,6 +144,7 @@ button:hover {
   border-top: 2px solid #3C6577;
   height: 400px;
 }
+
 .task-list-cards {
   margin: 40px 20px 40px 20px;
 }
@@ -216,4 +218,54 @@ h2 {
   display: flex;
   align-items: center;
   margin-top: 10px; 
+}
+
+@media screen and (max-width: 320px) {
+  .main-header {
+  display: block;
+  height: 140px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.6em;
+  padding-left: 60px;
+  padding-top: 19px;
+}
+
+.search-img {
+margin-left: 10px;
+padding: 10px;
+}
+
+.search-bar {
+  margin-top: 10px;
+}
+
+.search-input {
+  margin-right: 10px;
+  }
+
+main {
+  display: block;
+
+}
+
+.filter-urgency {
+  height: 100px;
+}
+
+.filter-urgency-btn {
+  margin-top: 21px;
+}
+
+.card-title,
+.card-list,
+.card-navigation {
+  width: 280px;
+}
+
+.task-list-cards {
+  margin: 20px auto;
+}
 }
