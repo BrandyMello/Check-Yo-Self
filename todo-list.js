@@ -8,7 +8,7 @@ class ToDo {
   }
 
   saveToStorage() {
-
+    localStorage.setItem('newToDo', JSON.stringify(this));
   }
 
   deleteFromStorage () {
@@ -25,10 +25,10 @@ class ToDo {
 
 }
 
-class TaskList {
-  constructor(id, list, done) {
-    this. id = id;
-    this. list = list;
-    this.done = false;
-  }
-}
+// class TaskList {
+//   constructor(id, list, done) {
+//     this. id = id;
+//     this. list = list;
+//     this.done = false;
+//   }
+// }

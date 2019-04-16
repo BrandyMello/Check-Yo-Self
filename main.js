@@ -6,7 +6,6 @@ var makeListBtn = document.querySelector('.make-task-card-btn')
 var taskTitle = document.querySelector('.task-title')
 var cardList = [];
 const lists = [];
-var newTaskLists = [];
 
 addTask.addEventListener('click', addToList)
 
@@ -21,10 +20,9 @@ function addToList(e) {
       <img src="images/delete.svg" class="delete-btn">
       <p>${taskItem.value}</p>
     </li>`
-    var newTaskList = new TaskList (Date.now(), taskItem.value, false)
-    newTaskLists.push(newTaskList)
     cardList.push(taskItem.value)
-    // clearTaskInput();
+    console.log(taskItem.value)
+    clearTaskInput();
   }
 
 function clearTaskInput() {
@@ -61,8 +59,9 @@ makeListBtn.addEventListener('click', function(e) {
       </div>
       <div class="card-list">
         <ul class="generated-task-list">
+        
         ${cardList.map(toDo => `
-          <li><input type="checkbox" class="checkbox">. ${toDo}
+          <li><input type="checkbox" class="checkbox">${toDo}
           </li>`).join('')}
 
         </ul>
@@ -79,13 +78,6 @@ newToDo.saveToStorage();
 clearTaskBar()
 
 })
-
-
- // var listOfTasks = new TaskList(Date.now(), cardList, ${toDo.done ? "checked" || ""})
-// ${toDo.done ? "checked" || ""} terenary for done state of individual task
-
-
-
 
 // function compileTasks( ){
 //   var id = Date.now();
@@ -137,8 +129,6 @@ clearTaskBar()
 // }
 
 // makeListBtn.addEventListener('click',compileTasks)
- // var newTask = new TaskList(Date.now(), taskItem.value, false)
- //    cardList.push(newTask)
 
 
 console.log("hello");
