@@ -6,6 +6,7 @@ var makeListBtn = document.querySelector('.make-task-card-btn')
 var taskTitle = document.querySelector('.task-title')
 var cardList = [];
 const lists = [];
+var newTaskLists = [];
 
 addTask.addEventListener('click', addToList)
 
@@ -20,9 +21,10 @@ function addToList(e) {
       <img src="images/delete.svg" class="delete-btn">
       <p>${taskItem.value}</p>
     </li>`
+    var newTaskList = new TaskList (Date.now(), taskItem.value, false)
+    newTaskLists.push(newTaskList)
     cardList.push(taskItem.value)
-    console.log(taskItem.value)
-    clearTaskInput();
+    // clearTaskInput();
   }
 
 function clearTaskInput() {
@@ -46,20 +48,23 @@ tasks.addEventListener('click', function (e) {
 //----------------Post Car----------------------------//
 
 makeListBtn.addEventListener('click', function(e) {
-  if (taskTitle.value === "" || cardList === []) {
+   if (taskTitle.value === "") {
     return alert('Please, add a title!');
   }
+  var newToDo = new ToDo(Date.now(), taskTitle.value, cardList);
+  lists.push(newToDo);
   var taskBoard = document.querySelector('.right-side')
   taskBoard.innerHTML += (`
-    <article class="task-list-cards">
+    <article class="task-list-cards" data-id="${newToDo.id}">
       <div class="card-title">
-        <h2>${taskTitle.value}</h2>
+        <h2>${newToDo.title}</h2>
       </div>
       <div class="card-list">
         <ul class="generated-task-list">
         ${cardList.map(toDo => `
-          <input type="checkbox" class="checkbox">${toDo}`
-          ).join('')}
+          <li><input type="checkbox" class="checkbox">. ${toDo}
+          </li>`).join('')}
+
         </ul>
       </div>
       <div class="card-navigation">
@@ -70,9 +75,17 @@ makeListBtn.addEventListener('click', function(e) {
       </div>    
     </article> `
 );
+newToDo.saveToStorage();
 clearTaskBar()
 
 })
+
+
+ // var listOfTasks = new TaskList(Date.now(), cardList, ${toDo.done ? "checked" || ""})
+// ${toDo.done ? "checked" || ""} terenary for done state of individual task
+
+
+
 
 // function compileTasks( ){
 //   var id = Date.now();
@@ -89,29 +102,29 @@ clearTaskBar()
 //   }.join('');
 // }
 
-function compileTasks() {
-  // var newToDo = new ToDoList(taskTitle.value, ) 
-  var id = Date.now();
-  var unsavedList = [];
-  var childrenOfList = tasks.children;
-  // for (var i = 0; i < childrenOfList.length; i++) {
-    // var taskText = childrenOfList[i].childNodes[3].innerText;
-    // unsavedList.push(taskText);
-    // cardList.push(taskText);
-    // console.log(cardList)
-  // }
-  // console.log(unsavedList);
-  const title = (document.querySelector('.task-title').value);
-  const postIt = {
-    id,
-    title: taskTitle.value,
-    list: unsavedList,
-    done: false
-  };
-  lists.push(postIt);
-  // populatePost(lists, listItems);
-  console.log(postIt);
-}
+// function compileTasks() {
+//   // var newToDo = new ToDoList(taskTitle.value, ) 
+//   var id = Date.now();
+//   var unsavedList = [];
+//   var childrenOfList = tasks.children;
+//   // for (var i = 0; i < childrenOfList.length; i++) {
+//     // var taskText = childrenOfList[i].childNodes[3].innerText;
+//     // unsavedList.push(taskText);
+//     // cardList.push(taskText);
+//     // console.log(cardList)
+//   // }
+//   // console.log(unsavedList);
+//   const title = (document.querySelector('.task-title').value);
+//   const postIt = {
+//     id,
+//     title: taskTitle.value,
+//     list: unsavedList,
+//     done: false
+//   };
+//   lists.push(postIt);
+//   // populatePost(lists, listItems);
+//   console.log(postIt);
+// }
 
 // function populatePost(postIts, taskBoard) {
 //   taskList.innerHTML = postIts.map((postIt, i) => {
@@ -123,7 +136,9 @@ function compileTasks() {
 //   }).join('');
 // }
 
-makeListBtn.addEventListener('click',compileTasks)
+// makeListBtn.addEventListener('click',compileTasks)
+ // var newTask = new TaskList(Date.now(), taskItem.value, false)
+ //    cardList.push(newTask)
 
 
 console.log("hello");

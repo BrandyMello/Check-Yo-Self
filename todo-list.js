@@ -1,8 +1,9 @@
 class ToDo {
-  constructor(title, tasks) {
-    this.id = Date.now();
+  constructor(id, title, tasks) {
+    this.id = id;
     this.title = title;
     this.tasks = tasks;
+    // this.done = false;
     this.urgent = false;
   }
 
@@ -22,4 +23,12 @@ class ToDo {
 
   }
 
+}
+
+class TaskList {
+  constructor(id, list, done) {
+    this. id = id;
+    this. list = list;
+    this.done = false;
+  }
 }
