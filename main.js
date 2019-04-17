@@ -4,9 +4,12 @@ const listItems = document.querySelector('.generated-list-left');
 var taskItem = document.querySelector('.task-item');
 var makeListBtn = document.querySelector('.make-task-card-btn')
 var taskTitle = document.querySelector('.task-title')
+var clearAllBtn = document.querySelector('.clear-all-btn');
 var cardList = [];
 const lists = [];
 
+// JSON.parse(localStorage.getItems('lists') || 
+clearAllBtn.addEventListener('click', clearInputs);
 addTask.addEventListener('click', addToList)
 
 
@@ -76,4 +79,12 @@ makeListBtn.addEventListener('click', function(e) {
 clearTempList()
 clearTaskBar();
 })
+
+
+
+function clearInputs() {
+  clearTaskBar();
+  clearTempList();
+}
+
  
