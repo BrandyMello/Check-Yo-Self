@@ -1,13 +1,14 @@
-class ToDoList {
-  constructor(title, tasks) {
-    this.id = Date.now();
+class ToDo {
+  constructor(id, title, tasks) {
+    this.id = id;
     this.title = title;
-    this.urgent = false;
     this.tasks = tasks;
+    // this.done = false;
+    this.urgent = false;
   }
 
   saveToStorage() {
-
+    localStorage.setItem('newToDo', JSON.stringify(this));
   }
 
   deleteFromStorage () {
@@ -24,10 +25,10 @@ class ToDoList {
 
 }
 
-class Tasks {
-  constructor(info) {
-    this.info = info;
-    this.done = false;
-    this.id = Date.now();
-  }
-}
+// class TaskList {
+//   constructor(id, list, done) {
+//     this. id = id;
+//     this. list = list;
+//     this.done = false;
+//   }
+// }
