@@ -12,19 +12,14 @@ addTask.addEventListener('click', addToList)
 
 function addToList(e) {
   e.preventDefault();
-  // if(taskItem.value === "") {
-  //   return;
-  // }
   tasks.innerHTML += `
     <li class="inserted-list-item" id="inserted-list-item">
       <img src="images/delete.svg" class="delete-btn">
       <p>${taskItem.value}</p>
     </li>`
     cardList.push(taskItem.value)
-    console.log(taskItem.value)
-    console.log(cardList)
     clearTaskInput();
-  }
+}
 
 function clearTaskInput() {
   var taskForm = document.querySelector('.add-task-bar');
@@ -32,8 +27,8 @@ function clearTaskInput() {
 }
 
 function clearTaskBar() {
-cardList = [];
-taskTitle.value = "";
+  cardList = [];
+  taskTitle.value = "";
 }
 
 tasks.addEventListener('click', function (e) {
@@ -41,8 +36,6 @@ tasks.addEventListener('click', function (e) {
     e.target.closest('.inserted-list-item').remove();
   }
 });
-
-//----------------Post Card----------------------------//
 
 makeListBtn.addEventListener('click', function(e) {
    if (taskTitle.value === "") {
@@ -73,61 +66,5 @@ makeListBtn.addEventListener('click', function(e) {
 );
 newToDo.saveToStorage();
 clearTaskBar();
-// addToList();
-
 })
-
-// function compileTasks( ){
-//   var id = Date.now();
-//   var unsavedList = [];
-//   var childrenOfList = tasks.children;
-//   for (var i = 0; i < childrenOfList.length; i++) {
-//     var taskText = childrenOfList[i].childNodes[3].innerText;
-//     unsavedList.push(taskText);
-//     document.querySelector('.generated-task-list').insertAdjacentHTML('afterbegin',`
-//         <li>
-//         <label>${unsavedList}</label>
-//         </li>
-//       `;
-//   }.join('');
-// }
-
-// function compileTasks() {
-//   // var newToDo = new ToDoList(taskTitle.value, ) 
-//   var id = Date.now();
-//   var unsavedList = [];
-//   var childrenOfList = tasks.children;
-//   // for (var i = 0; i < childrenOfList.length; i++) {
-//     // var taskText = childrenOfList[i].childNodes[3].innerText;
-//     // unsavedList.push(taskText);
-//     // cardList.push(taskText);
-//     // console.log(cardList)
-//   // }
-//   // console.log(unsavedList);
-//   const title = (document.querySelector('.task-title').value);
-//   const postIt = {
-//     id,
-//     title: taskTitle.value,
-//     list: unsavedList,
-//     done: false
-//   };
-//   lists.push(postIt);
-//   // populatePost(lists, listItems);
-//   console.log(postIt);
-// }
-
-// function populatePost(postIts, taskBoard) {
-//   taskList.innerHTML = postIts.map((postIt, i) => {
-//     return `
-//     <li>
-//     <label>${postIt.text}</label>
-//     </li>
-//     `;
-//   }).join('');
-// }
-
-// makeListBtn.addEventListener('click',compileTasks)
-
-
-console.log("hello");
  
