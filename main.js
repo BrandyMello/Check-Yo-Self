@@ -33,13 +33,20 @@ function clearTaskBar() {
 
 tasks.addEventListener('click', function (e) {
   if(e.target.className === 'delete-btn') {
-    e.target.closest('.inserted-list-item').remove();
+    var item = e.target.closest('.inserted-list-item')
+    cardList.splice(cardList.indexOf(item.childNodes[3].innerText), 1)
+    item.remove();
   }
 });
 
+function clearTempList() {
+  tasks.innerHTML = "";
+}
+
 makeListBtn.addEventListener('click', function(e) {
    if (taskTitle.value === "") {
-    return alert('Please, add a title!');
+    alert('Please, add a title!');
+    return
   }
   var newToDo = new ToDo(Date.now(), taskTitle.value, cardList);
   lists.push(newToDo);
@@ -65,6 +72,7 @@ makeListBtn.addEventListener('click', function(e) {
     </article> `
 );
 newToDo.saveToStorage();
+clearTempList()
 clearTaskBar();
 })
  
