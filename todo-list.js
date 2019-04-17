@@ -3,7 +3,6 @@ class ToDo {
     this.id = id;
     this.title = title;
     this.tasks = tasks;
-    // this.done = false;
     this.urgent = false;
   }
 
@@ -25,10 +24,3 @@ class ToDo {
 
 }
 
-// class TaskList {
-//   constructor(id, list, done) {
-//     this. id = id;
-//     this. list = list;
-//     this.done = false;
-//   }
-// }
