@@ -22,6 +22,7 @@ function addToList(e) {
     </li>`
     cardList.push(taskItem.value)
     console.log(taskItem.value)
+    console.log(cardList)
     clearTaskInput();
   }
 
@@ -32,8 +33,6 @@ function clearTaskInput() {
 
 function clearTaskBar() {
 cardList = [];
-var listElem = document.querySelector('.inserted-list-item')
-listElem.remove();
 taskTitle.value = "";
 }
 
@@ -43,7 +42,7 @@ tasks.addEventListener('click', function (e) {
   }
 });
 
-//----------------Post Car----------------------------//
+//----------------Post Card----------------------------//
 
 makeListBtn.addEventListener('click', function(e) {
    if (taskTitle.value === "") {
@@ -59,11 +58,9 @@ makeListBtn.addEventListener('click', function(e) {
       </div>
       <div class="card-list">
         <ul class="generated-task-list">
-        
         ${cardList.map(toDo => `
-          <li><input type="checkbox" class="checkbox">${toDo}
+          <li class="list-task"><input type="checkbox">  ${toDo}
           </li>`).join('')}
-
         </ul>
       </div>
       <div class="card-navigation">
@@ -75,7 +72,8 @@ makeListBtn.addEventListener('click', function(e) {
     </article> `
 );
 newToDo.saveToStorage();
-clearTaskBar()
+clearTaskBar();
+// addToList();
 
 })
 
