@@ -6,8 +6,8 @@ class ToDo {
     this.urgent = false;
   }
 
-  saveToStorage() {
-    localStorage.setItem('newToDo', JSON.stringify(this));
+  saveToStorage(lists) {
+    localStorage.setItem('newToDo', JSON.stringify(lists));
   }
 
   deleteFromStorage () {

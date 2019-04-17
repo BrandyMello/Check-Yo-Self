@@ -50,6 +50,8 @@ makeListBtn.addEventListener('click', function(e) {
   }
   var newToDo = new ToDo(Date.now(), taskTitle.value, cardList);
   lists.push(newToDo);
+  console.log(newToDo)
+  newToDo.saveToStorage(lists);
   var taskBoard = document.querySelector('.right-side')
   taskBoard.innerHTML += (`
     <article class="task-list-cards" data-id="${newToDo.id}">
@@ -71,7 +73,6 @@ makeListBtn.addEventListener('click', function(e) {
       </div>    
     </article> `
 );
-newToDo.saveToStorage();
 clearTempList()
 clearTaskBar();
 })
